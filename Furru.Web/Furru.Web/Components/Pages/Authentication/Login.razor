@@ -1,0 +1,82 @@
+﻿@page "/"
+
+
+@inherits PageBaseComponent
+@layout LoginLayout
+
+<PageTitle> Furru - Login </PageTitle>
+
+<style>
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        width: 400px;
+        height: 60%;
+        background-color: #f5f5f5;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-header {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-bottom: 20px;
+    }
+    .login-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .login-form-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+</style>
+
+<div class="login-form">
+    <section class="login-header">
+
+        <MudImage Src="images/FURRU.png"  Class="my-4"/>
+
+
+        <MudText Typo="Typo.caption" Align="Align.Start" Class="my-1"> @("Find the perfect home fur them. Log in to your portal to get started.")  </MudText>
+    </section>
+    <section class="login-content" >
+        <EditForm Model="@_loginModel" class="login-form-content">
+
+            <MudTextField Variant=Variant.Outlined  Label="Email" @bind-Value="@_loginModel.Email" For="(() => _loginModel.Email)" ShrinkLabel="true" InputType="InputType.Email" />
+            <MudTextField Class="my-3" Variant=Variant.Outlined Label="Password" @bind-Value="@_loginModel.Password" For="(() => _loginModel.Password)" ShrinkLabel="true" InputType="InputType.Password" />
+
+            <MudText Class="my-2" Align="Align.Left" Typo="Typo.caption" Style="justify-self: end; align-self: end; font-size: 8px;"> <MudLink Style="font-size: 10px;" Href="/forgotpassword">forgot your password?</MudLink> </MudText>
+            
+            <MudButton Class="my-2 py-3" DropShadow=false Variant="Variant.Filled" Color="Color.Primary" FullWidth="true">CONTINUE</MudButton>
+
+        </EditForm>
+        <MudText Class="mt-2" Align="Align.Center" Typo="Typo.caption" Style="justify-self: center; align-self: center;" >  OR  </MudText>
+        <MudButton Class="my-4 py-3" DropShadow=false Variant="Variant.Filled" Color="Color.Warning" EndIcon="@Icons.Custom.Brands.Google" FullWidth="true">CONTINUE WITH GOOGLE</MudButton>
+
+
+        <MudText Class="mt-3 mb-1" Align="Align.Center" Typo="Typo.caption" Style="justify-self: center; align-self: center;">
+            Don't  have an account yet? <MudLink Href="/register"> <b> Sign up </b> </MudLink>
+        </MudText>
+    </section>
+</div>
+
+@code {
+
+
+    public LoginModel _loginModel = new();
+    public class LoginModel
+    {
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+    }
+}

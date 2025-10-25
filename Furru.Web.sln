@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furru.Web", "Furru.Web\Furr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furru.Web.Client", "Furru.Web\Furru.Web.Client\Furru.Web.Client.csproj", "{56EF47AA-082E-4D85-B67E-B26320B4958E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furru.Web.Shared", "Furru.Web.Shared\Furru.Web.Shared.csproj", "{D59030CA-C525-4055-8906-36B4551038AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{56EF47AA-082E-4D85-B67E-B26320B4958E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56EF47AA-082E-4D85-B67E-B26320B4958E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56EF47AA-082E-4D85-B67E-B26320B4958E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59030CA-C525-4055-8906-36B4551038AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59030CA-C525-4055-8906-36B4551038AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59030CA-C525-4055-8906-36B4551038AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59030CA-C525-4055-8906-36B4551038AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Furru.Web.Shared\Furru.Web.Shared.csproj" />
     <ProjectReference Include="..\Furru.Web.Client\Furru.Web.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.9" />
+    <PackageReference Include="MudBlazor" Version="8.13.0" />
   </ItemGroup>
 
 </Project>
