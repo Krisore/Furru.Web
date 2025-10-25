@@ -1,8 +1,90 @@
 ﻿@page "/register"
 
 
-<h3>Register</h3>
+@inherits PageBaseComponent
+@layout LoginLayout
+
+<PageTitle> Furru - Login </PageTitle>
+
+<style>
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        width: 400px;
+        height: 100%;
+        background-color: #f5f5f5;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-header {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-self: flex-end;
+        margin-bottom: 20px;
+    }
+    .login-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .login-form-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+</style>
+
+<div class="login-form">
+    <section class="login-header">
+
+        <MudImage Src="images/FURRU.png" Class="my-4" />
+
+        <MudText Typo="Typo.caption"  Class="my-1"> @("Find the perfect home fur them. Sign Up! to your portal to get started.")  </MudText>
+    </section>
+    <section class="login-content">
+        <EditForm Model="@_registerModel" class="login-form-content">
+
+            <MudTextField Class="my-3"  Variant=Variant.Outlined Label="Email" @bind-Value="@_registerModel.Email" For="(() => _registerModel.Email)" ShrinkLabel="true" InputType="InputType.Email" />
+
+
+
+            <MudTextField  Variant=Variant.Outlined Label="First name" @bind-Value="@_registerModel.FirstName" For="(() => _registerModel.FirstName)" ShrinkLabel="true" InputType="InputType.Text" />
+            <MudTextField Class="my-2" Variant=Variant.Outlined Label="Last name" @bind-Value="@_registerModel.LastName" For="(() => _registerModel.LastName)" ShrinkLabel="true" InputType="InputType.Text" />
+
+            <MudTextField Variant=Variant.Outlined Label="Password" @bind-Value="@_registerModel.Password" For="(() => _registerModel.Password)" ShrinkLabel="true" InputType="InputType.Password" />
+            <MudTextField Class="my-3" Variant=Variant.Outlined Label="Confirm Password" @bind-Value="@_registerModel.ConfirmPassword" For="(() => _registerModel.ConfirmPassword)" ShrinkLabel="true" InputType="InputType.Password" />
+
+            <MudText Class="my-2" Align="Align.Left" Typo="Typo.caption" Style="justify-self: end; align-self: end; font-size: 8px;">
+                by signing up, you agree to our <MudLink Style="font-size: 10px;" Color="Color.Secondary" Href="/terms"> <b>Terms of Service</b> </MudLink> and <MudLink Style="font-size: 10px;" Href="/privacy" Color="Color.Secondary"> <b>Privacy Policy</b> </MudLink>
+            </MudText>
+
+            <MudButton Class="my-2 py-3" DropShadow=false Variant="Variant.Filled" Color="Color.Primary" FullWidth="true">SIGN UP</MudButton>
+
+        </EditForm>
+
+        <MudText Class="my-2" Typo="Typo.caption" Align="Align.Center" Style="justify-self: center; align-self: center; font-size: 10px;"> back to <MudLink Style="font-size: 10px;" Href="/" Color="Color.Secondary"> <b> Login </b>  </MudLink></MudText>
+    </section>
+</div>
 
 @code {
 
+
+    public RegisterModel _registerModel = new();
+    public class RegisterModel
+    {
+        public string? Email { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+
+
+        public string? Password { get; set; }
+        public string? ConfirmPassword { get; set; }
+    }
 }
